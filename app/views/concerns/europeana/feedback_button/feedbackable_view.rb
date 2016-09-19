@@ -10,7 +10,7 @@ module Europeana
       def feedback
         return nil unless feedback_enabled?
         {
-            form_action: "/feedback",
+            form_action: europeana_feedback_button.feedback_path,
             maxlength: 400,
             minwords: 5
         }

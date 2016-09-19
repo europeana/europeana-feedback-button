@@ -20,9 +20,10 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'rails', '~> 4.2', '>= 4.2.7.1'
-  s.add_development_dependency 'postgres', '~>0.8'
+
+  s.add_development_dependency 'bundler', '~> 1.8'
+  s.add_development_dependency 'rake', '~> 11.0'
   s.add_development_dependency 'rspec-rails', '~> 3.0'
   s.add_development_dependency 'dotenv-rails', '~> 2.1'
   s.add_development_dependency 'shoulda-matchers', '~> 2.8'
-
 end
