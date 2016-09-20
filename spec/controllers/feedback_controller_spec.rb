@@ -3,8 +3,10 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
     Rails.application.class.routes.url_helpers
   end
 
+  routes { Europeana::FeedbackButton::Engine.routes }
+
   describe 'POST create' do
-    let(:params) { { locale: 'en', type: 'comment', text: 'This is good, five words!', url: main_app.root_path(locale: 'en') } }
+    let(:params) { { locale: 'en', type: 'comment', text: 'This is good, five words!', url: main_app.root_path(locale: 'en'), format: :json } }
     subject { post :create, params }
 
     context 'with recipient configured' do
