@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.version     = Europeana::FeedbackButton::VERSION
   s.authors     = ["Lutz Biedinger"]
   s.email       = ["lutz.biedinger@gmail.com"]
-  s.homepage    = "http://github.org/europeana"
+  s.homepage    = "http://github.org/europeana/europeana-feedback-button"
   s.summary     = "Europeana Feedback Button."
   s.description = "An engine which allows the Europeana Feedback Button to be displayed."
   s.license = 'EUPL-1.1'

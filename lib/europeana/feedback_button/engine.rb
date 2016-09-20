@@ -1,6 +1,8 @@
 module Europeana
   module FeedbackButton
     class Engine < ::Rails::Engine
+      isolate_namespace Europeana::FeedbackButton
+
       engine_name 'europeana_feedback_button'
 
       config.generators do |g|

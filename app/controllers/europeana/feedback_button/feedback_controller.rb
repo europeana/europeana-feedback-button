@@ -2,7 +2,7 @@
 module Europeana
   module FeedbackButton
     class FeedbackController < ApplicationController
-      include ::FeedbackHelper
+      include FeedbackHelper
 
       def create
         if feedback_enabled? && FeedbackMailer.post(mailer_post_args).deliver_later
