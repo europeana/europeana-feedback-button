@@ -6,6 +6,7 @@ module Europeana
     # Feedback form display methods
     module FeedbackableView
       extend ActiveSupport::Concern
+      include FeedbackHelper
 
       def feedback
         return nil unless feedback_enabled?
