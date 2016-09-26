@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'europeana/feedback_button/engine'
 
 module Europeana

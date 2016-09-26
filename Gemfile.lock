@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    europeana-feedback-button (0.0.2)
+    europeana-feedback-button (0.0.4)
       rails (~> 4.2, >= 4.2.7.1)
 
 GEM
@@ -171,4 +171,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.12.5
+   1.13.1
