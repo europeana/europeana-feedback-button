@@ -1,5 +1,7 @@
 # Europeana::FeedbackButton
 
+[![Build Status](https://travis-ci.org/europeana/europeana-feedback-button.svg?branch=develop)](https://travis-ci.org/europeana/europeana-feedback-button) [![Coverage Status](https://coveralls.io/repos/github/europeana/europeana-feedback-button/badge.svg?branch=develop)](https://coveralls.io/github/europeana/europeana-feedback-button?branch=develop) [![security](https://hakiri.io/github/europeana/europeana-feedback-button/develop.svg)](https://hakiri.io/github/europeana/europeana-feedback-button/develop) [![Dependency Status](https://gemnasium.com/europeana/europeana-feedback-button.svg)](https://gemnasium.com/europeana/europeana-feedback-button)
+
 Ruby gem providing feedback buttons for europeana pages.
 
 ## Usage
