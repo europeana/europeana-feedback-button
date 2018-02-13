@@ -12,7 +12,7 @@ module Europeana
         @page = page
         @ip = ip
 
-        mail(to: Rails.application.config.x.feedback_mail_to, subject: text.truncate(100))
+        mail(to: Rails.application.config.x.feedback_mail_to, subject: text.truncate(100, separator: ' '))
       end
     end
   end
