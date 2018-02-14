@@ -10,4 +10,3 @@ module Europeana
     end
   end
 end
-

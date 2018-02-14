@@ -1,5 +1,6 @@
 .bundle/
 .idea/
+coverage/*
 log/*.log
 pkg/
 spec/dummy/log*/log
@@ -8,6 +9,7 @@ spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
 spec/dummy/tmp/
 spec/dummy/.sass-cache
-
+.ruby-version
 europeana-feedback-button-*.gem
 .env
+/Gemfile.lock

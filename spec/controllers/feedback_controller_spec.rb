@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe Europeana::FeedbackButton::FeedbackController do
   def main_app
     Rails.application.class.routes.url_helpers
@@ -14,16 +15,16 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
         Rails.application.config.x.feedback_mail_to = 'feedback@example.com'
       end
 
-      it "should queue an email job" do
+      it 'should queue an email job' do
         expect { subject }.to change(ActionMailer::Base.deliveries, :length)
       end
-      #it '' do
+      # it '' do
       #  message_delivery = instance_double(ActionMailer::MessageDelivery)
       #  expect(ServiceMailer).to receive(:new_user).with(@user).and_return(message_delivery)
       #  expect(message_delivery).to receive(:deliver_later)
       #  subject
-        #expect { subject }.to change { Delayed::Job.where("handler LIKE '%FeedbackMailer%'").count }.by(1)
-      #end
+      # expect { subject }.to change { Delayed::Job.where("handler LIKE '%FeedbackMailer%'").count }.by(1)
+      # end
     end
 
     context 'without recipient configured' do

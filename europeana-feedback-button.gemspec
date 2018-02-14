@@ -1,23 +1,26 @@
-#lib = File.expand_path('../lib', __FILE__)
-#$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# frozen_string_literal: true
+# lib = File.expand_path('../lib', __FILE__)
+# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-$:.push File.expand_path("../lib", __FILE__)
+$:.push File.expand_path('../lib', __FILE__)
 
-require "europeana/feedback_button/version"
+require 'europeana/feedback_button/version'
 
 Gem::Specification.new do |s|
-  s.name        = "europeana-feedback-button"
+  s.name        = 'europeana-feedback-button'
   s.version     = Europeana::FeedbackButton::VERSION
-  s.authors     = ["Lutz Biedinger"]
-  s.email       = ["lutz.biedinger@gmail.com"]
-  s.homepage    = "http://github.org/europeana/europeana-feedback-button"
-  s.summary     = "Europeana Feedback Button."
-  s.description = "An engine which allows the Europeana Feedback Button to be displayed."
+  s.authors     = ['Lutz Biedinger']
+  s.email       = ['lutz.biedinger@gmail.com']
+  s.homepage    = 'http://github.org/europeana/europeana-feedback-button'
+  s.summary     = 'Europeana Feedback Button.'
+  s.description = 'An engine which allows the Europeana Feedback Button to be displayed.'
   s.license = 'EUPL-1.1'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = ['lib']
+
+  s.required_ruby_version = '>= 2.0.0'
 
   s.add_dependency 'rails', '~> 4.2', '>= 4.2.7.1'
 
