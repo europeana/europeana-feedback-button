@@ -1,5 +1,6 @@
 .bundle/
 .idea/
+coverage/*
 log/*.log
 pkg/
 spec/dummy/log*/log
