@@ -12,8 +12,8 @@ module Europeana
         return nil unless feedback_enabled?
         {
           form_action: europeana_feedback_button.feedback_path,
-          maxlength: 400,
-          minwords: 5
+          maxlength: Europeana::FeedbackButton::Feedback::MAX_LENGTH,
+          minwords: Europeana::FeedbackButton::Feedback::MIN_WORDS
         }
       end
     end
