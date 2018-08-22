@@ -7,8 +7,9 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
   routes { Europeana::FeedbackButton::Engine.routes }
 
   describe 'POST create' do
-    let(:params) { { locale: 'en', type: 'comment', text: 'This is good, five words!', url: main_app.root_path(locale: 'en'), format: :json } }
-    subject { post :create, params }
+    let(:params) { { type: 'comment', text: 'This is good, five words!', url: main_app.root_path, format: :json } }
+
+    subject { -> { post :create, params: params } }
 
     context 'with recipient configured' do
       before do
@@ -16,15 +17,23 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
       end
 
       it 'should queue an email job' do
-        expect { subject }.to change(ActionMailer::Base.deliveries, :length)
+        expect { subject.call }.to change{ActionMailer::Base.deliveries}
       end
-      # it '' do
-      #  message_delivery = instance_double(ActionMailer::MessageDelivery)
-      #  expect(ServiceMailer).to receive(:new_user).with(@user).and_return(message_delivery)
-      #  expect(message_delivery).to receive(:deliver_later)
-      #  subject
-      # expect { subject }.to change { Delayed::Job.where("handler LIKE '%FeedbackMailer%'").count }.by(1)
-      # end
+
+      it 'should return 200 response' do
+        subject.call
+        expect(response.status).to eq(200)
+      end
+
+      it 'should return JSON' do
+        subject.call
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'should include "success": "true"' do
+        subject.call
+        expect(JSON.parse(response.body)['success']).to be(true)
+      end
     end
 
     context 'without recipient configured' do
@@ -33,7 +42,22 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
       end
 
       it 'should not queue an email job' do
-        expect { subject }.to_not change(ActionMailer::Base.deliveries, :length)
+        expect { subject.call }.to_not change(ActionMailer::Base.deliveries, :length)
+      end
+
+      it 'should return 500 response' do
+        subject.call
+        expect(response.status).to eq(500)
+      end
+
+      it 'should return JSON' do
+        subject.call
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'should include "success": "false"' do
+        subject.call
+        expect(JSON.parse(response.body)['success']).to be(false)
       end
     end
   end

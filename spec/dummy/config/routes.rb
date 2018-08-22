@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  mount Europeana::FeedbackButton::Engine, at: '/'
+  root 'welcome#index'
+  mount Europeana::FeedbackButton::Engine, at: '/europeana/feedback_button'
 end
