@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-# lib = File.expand_path('../lib', __FILE__)
-# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 $:.push File.expand_path('../lib', __FILE__)
 
@@ -22,11 +20,10 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.0.0'
 
-  s.add_dependency 'rails', '~> 4.2', '>= 4.2.7.1'
+  s.add_dependency 'rails', '>= 4.2.7.1', '< 6'
 
   s.add_development_dependency 'bundler', '~> 1.8'
   s.add_development_dependency 'rake', '~> 11.0'
   s.add_development_dependency 'rspec-rails', '~> 3.0'
-  s.add_development_dependency 'dotenv-rails', '~> 2.1'
   s.add_development_dependency 'shoulda-matchers', '~> 2.8'
 end
