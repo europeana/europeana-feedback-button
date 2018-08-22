@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe Europeana::FeedbackButton::FeedbackController do
   def main_app
     Rails.application.class.routes.url_helpers
@@ -7,7 +8,7 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
   routes { Europeana::FeedbackButton::Engine.routes }
 
   describe 'POST create' do
-    let(:params) { { type: 'comment', text: 'This is good, five words!', url: main_app.root_path, format: :json } }
+    let(:params) { { type: 'comment', text: 'This is good, five words!', page: main_app.root_path, format: :json } }
 
     subject { -> { post :create, params: params } }
 
