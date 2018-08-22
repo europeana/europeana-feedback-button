@@ -8,7 +8,7 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
   routes { Europeana::FeedbackButton::Engine.routes }
 
   describe 'POST create' do
-    let(:params) { { type: 'comment', text: 'This is good, five words!', page: main_app.root_path, format: :json } }
+    let(:params) { { type: 'comment', text: 'This is good, five words!', page: main_app.root_path, privacy_policy: '1', format: :json } }
 
     subject { -> { post :create, params: params } }
 

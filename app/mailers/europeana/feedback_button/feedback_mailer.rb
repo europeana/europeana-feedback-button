@@ -4,7 +4,7 @@ module Europeana
     class FeedbackMailer < ApplicationMailer
       include FeedbackHelper
 
-      def post(text:, type:, page:)
+      def post(text:, type:, page:, email: nil)
         fail Errors::NoRecipient unless feedback_enabled?
 
         @text = text

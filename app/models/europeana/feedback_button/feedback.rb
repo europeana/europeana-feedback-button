@@ -13,7 +13,7 @@ module Europeana
 
       validates :text, :type, :page, presence: true
       validates :type, inclusion: { in: TYPES }
-      validates :privacy_policy, acceptance: true
+      validates :privacy_policy, acceptance: true, allow_nil: false, allow_blank: false
       validates :text, length: { maximum: MAX_LENGTH }
       validates :text, word_count: { minimum: MIN_WORDS }
     end
