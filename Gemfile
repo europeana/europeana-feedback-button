@@ -9,6 +9,5 @@ group :test do
 end
 
 group :test, :develop do
-  gem 'sqlite3'
   gem 'rubocop', require: false
 end
