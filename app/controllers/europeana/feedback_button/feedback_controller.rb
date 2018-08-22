@@ -19,7 +19,7 @@ module Europeana
       private
 
       def mailer_post_args
-        { text: params[:text], type: params[:type], page: params[:page], ip: request.remote_ip }
+        params.permit(:text, :type, :page)
       end
     end
   end
