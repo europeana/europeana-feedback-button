@@ -5,7 +5,7 @@ module Europeana
       include FeedbackHelper
 
       def create
-        if feedback_enabled? && FeedbackMailer.post(mailer_post_args).deliver_later
+        if feedback_enabled? && FeedbackMailer.post(**mailer_post_args).deliver_later
           respond_to do |format|
             format.json { render json: { success: true } }
           end
@@ -19,7 +19,7 @@ module Europeana
       private
 
       def mailer_post_args
-        params.permit(:text, :type, :page)
+        params.permit(:text, :type, :page, :email, :privacy).to_h.symbolize_keys
       end
     end
   end
