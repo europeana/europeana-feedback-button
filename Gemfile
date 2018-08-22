@@ -9,5 +9,6 @@ group :test do
 end
 
 group :test, :develop do
-  gem 'rubocop', require: false
+  gem 'rails', '> 5.2', '< 6'
+  gem 'rubocop', '0.53', require: false
 end

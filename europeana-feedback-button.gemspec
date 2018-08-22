@@ -25,6 +25,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler', '~> 1.8'
   s.add_development_dependency 'rake', '~> 11.0'
   s.add_development_dependency 'rspec-rails', '~> 3.0'
-  s.add_development_dependency 'dotenv-rails', '~> 2.1'
   s.add_development_dependency 'shoulda-matchers', '~> 3'
 end
