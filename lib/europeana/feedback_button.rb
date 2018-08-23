@@ -4,6 +4,9 @@ require 'europeana/feedback_button/engine'
 
 module Europeana
   module FeedbackButton
+    # TODO: why is this necessary?
+    autoload :FeedbackableView, 'europeana/feedback_button/feedbackable_view'
+
     class << self
       # @return [String] Email recipient of feedback submissions
       attr_accessor :mail_to

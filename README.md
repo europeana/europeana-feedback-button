@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/europeana/europeana-feedback-button.svg?branch=develop)](https://travis-ci.org/europeana/europeana-feedback-button) [![Security](https://hakiri.io/github/europeana/europeana-feedback-button/develop.svg)](https://hakiri.io/github/europeana/europeana-feedback-button/develop) [![Maintainability](https://api.codeclimate.com/v1/badges/326e7cf35738e64c36d6/maintainability)](https://codeclimate.com/github/europeana/europeana-feedback-button/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/326e7cf35738e64c36d6/test_coverage)](https://codeclimate.com/github/europeana/europeana-feedback-button/test_coverage)
 
-Rails engined providing feedback functionality for various Europeana websites.
+Rails engine providing feedback functionality for various Europeana websites.
 
 ## Usage
 
