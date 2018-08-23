@@ -2,17 +2,24 @@
 module Europeana
   module FeedbackButton
     class ApplicationController < ActionController::Base
-      protect_from_forgery with: :exception
+      protect_from_forgery
 
       before_action :fail_unless_feedback_enabled
-
-      class ApplicationError < StandardError; end
 
       rescue_from ApplicationError do |exception|
         respond_to do |format|
           format.json do
-            response = { success: false }
-            response[:errors] = @errors if @errors.present?
+            response = { success: false, message: exception.message }
+            response[:errors] = exception.errors if exception.errors.present?
+            render json: response, status: 400
+          end
+        end
+      end
+
+      rescue_from NoRecipientError do |exception|
+        respond_to do |format|
+          format.json do
+            response = { success: false, message: exception.message }
             render json: response, status: 500
           end
         end
@@ -21,7 +28,7 @@ module Europeana
       protected
 
       def fail_unless_feedback_enabled
-        fail ApplicationError, 'Feedback is not enabled' unless feedback_enabled?
+        fail NoRecipientError, 'Feedback is not enabled' unless Europeana::FeedbackButton.enabled?
       end
     end
   end

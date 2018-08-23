@@ -11,8 +11,8 @@ module Europeana
       end
 
       config.autoload_paths += %W(
+        #{config.root}/app/validators
         #{config.root}/app/views/concerns
-        #{config.root}/app/views/layouts
       )
     end
   end

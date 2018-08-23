@@ -3,16 +3,14 @@
 module Europeana
   module FeedbackButton
     class FeedbackController < ApplicationController
-      include FeedbackHelper
-
       def create
         feedback = Feedback.new(feedback_params)
 
         feedback.validate
 
         unless feedback.valid?
-          @errors = feedback.errors.messages
-          fail ApplicationError
+          fail ApplicationError.new('Feedback is invalid. See "errors" for details.',
+                                    errors: feedback.errors.messages)
         end
 
         FeedbackMailer.post(**mailer_post_args).deliver_later
