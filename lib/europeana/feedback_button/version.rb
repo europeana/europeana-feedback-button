@@ -2,6 +2,6 @@
 
 module Europeana
   module FeedbackButton
-    VERSION = '0.0.5'.freeze
+    VERSION = '0.0.5'
   end
 end

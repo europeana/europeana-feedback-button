@@ -3,7 +3,7 @@
 module Europeana
   module FeedbackButton
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path('../templates', __FILE__)
+      source_root File.expand_path('templates', __dir__)
 
       desc 'Creates an initializer for Europeana::FeedbackButton.'
 

@@ -46,7 +46,7 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
         expect { subject.call }.to change(ActionMailer::Base.deliveries, :length).by(1)
       end
 
-        it 'should have response status code 200' do
+      it 'should have response status code 200' do
         subject.call
         expect(response.status).to eq(200)
       end
@@ -94,10 +94,10 @@ RSpec.describe Europeana::FeedbackButton::FeedbackController do
 
       it_behaves_like 'feedback creation failure'
 
-       it 'should have response status code 500' do
-          subject.call
-          expect(response.status).to eq(500)
-        end
+      it 'should have response status code 500' do
+        subject.call
+        expect(response.status).to eq(500)
+      end
     end
   end
 end

@@ -5,7 +5,7 @@ module Europeana
     class Feedback
       include ActiveModel::Model
 
-      MAX_LENGTH = 400.freeze
+      MAX_LENGTH = 400
       MIN_WORDS = 5
       TYPES = %w(comment correction bug).freeze
 
