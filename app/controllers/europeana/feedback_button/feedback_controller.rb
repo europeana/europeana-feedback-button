@@ -2,7 +2,7 @@
 
 module Europeana
   module FeedbackButton
-    class FeedbackController < ApplicationController
+    class FeedbackController < Europeana::FeedbackButton::ApplicationController
       def create
         feedback = Feedback.new(feedback_params)
 
