@@ -8,17 +8,13 @@ Rails engine providing feedback functionality for various Europeana websites.
 
 ### Include gem
 
-* ``gem 'europeana-feedback-button'``
+* ``gem 'europeana-feedback-button', require: 'europeana/feedback_button'``
 * Run ``bundle install``
 
 ### Generate an initializer
 
 * Run ``bundle exec rails g europeana:feedback_button:install``
 * Edit config/initializers/europeana_feedback_button.rb to configure the engine
-
-### Require Europeana::FeedbackButton
-
-* Add ``require 'europeana/feedback_button'`` to your app's config/application.rb
 
 ### Mount the engine
 
