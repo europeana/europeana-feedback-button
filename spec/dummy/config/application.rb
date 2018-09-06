@@ -10,7 +10,7 @@ require 'action_mailer/railtie'
 require 'action_view/railtie'
 
 Bundler.require(*Rails.groups)
-# TODO: why is this necessary?
+
 require 'europeana/feedback_button'
 
 module Dummy

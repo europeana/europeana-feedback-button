@@ -12,8 +12,7 @@ RSpec.describe Europeana::FeedbackButton::Feedback do
     five_words = %w(one two three four five)
     five_words.each_with_index do |_word, index|
       words = five_words[0..index]
-      text = words.join(' ')
-      subject.text = text
+      subject.text = words.join(' ')
       subject.validate
 
       if words.size == 5
