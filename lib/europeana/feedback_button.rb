@@ -4,9 +4,14 @@ require 'europeana/feedback_button/engine'
 
 module Europeana
   module FeedbackButton
+    PRIVACY_POLICY_URL = 'https://www.europeana.eu/portal/rights/privacy.html'.freeze
+
     class << self
       # @return [String] Email recipient of feedback submissions
       attr_accessor :mail_to
+
+      # @return [String] URL to the privacy policy users must accept
+      attr_accessor :privacy_policy_url
 
       # Is feedback enabled?
       #
@@ -17,6 +22,8 @@ module Europeana
         mail_to.present?
       end
     end
+
+    self.privacy_policy_url = PRIVACY_POLICY_URL
 
     class ApplicationError < StandardError
       attr_reader :errors

@@ -13,6 +13,7 @@ module Europeana
           form_action: europeana_feedback_button.feedback_path,
           maxlength: Europeana::FeedbackButton::Feedback::MAX_LENGTH,
           minwords: Europeana::FeedbackButton::Feedback::MIN_WORDS
+          privacy_policy_url: Europeana::FeedbackButton.privacy_policy_url
         }
       end
     end
