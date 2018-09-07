@@ -8,7 +8,10 @@ module Europeana
         return if options[:allow_blank] && value.blank?
 
         minimum = options[:minimum] || 5
+        validate_minimum_words(record, attribute, value, minimum)
+      end
 
+      def validate_minimum_words(record, attribute, value, minimum)
         word_count = count_words(value)
         unless word_count >= minimum
           record.errors[attribute] << (options[:message] || "has too few words (#{word_count} < #{minimum})")
