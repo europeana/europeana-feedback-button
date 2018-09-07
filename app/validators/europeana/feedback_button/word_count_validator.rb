@@ -9,10 +9,14 @@ module Europeana
 
         minimum = options[:minimum] || 5
 
-        word_count = value&.strip&.scan(/\w+/)&.size || 0
+        word_count = count_words(value)
         unless word_count >= minimum
           record.errors[attribute] << (options[:message] || "has too few words (#{word_count} < #{minimum})")
         end
+      end
+
+      def count_words(value)
+        value&.strip&.scan(/\w+/)&.size || 0
       end
     end
   end
