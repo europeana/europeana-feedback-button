@@ -4,7 +4,7 @@ require 'europeana/feedback_button/engine'
 
 module Europeana
   module FeedbackButton
-    PRIVACY_POLICY_URL = 'https://www.europeana.eu/portal/rights/privacy.html'.freeze
+    PRIVACY_POLICY_URL = 'https://www.europeana.eu/portal/rights/privacy.html'
 
     class << self
       # @return [String] Email recipient of feedback submissions
