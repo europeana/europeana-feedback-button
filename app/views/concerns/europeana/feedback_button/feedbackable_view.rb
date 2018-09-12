@@ -2,18 +2,18 @@
 
 module Europeana
   module FeedbackButton
-    ##
     # Feedback form display methods
     module FeedbackableView
       extend ActiveSupport::Concern
-      include FeedbackHelper
 
       def feedback
-        return nil unless feedback_enabled?
+        return nil unless Europeana::FeedbackButton.enabled?
+
         {
           form_action: europeana_feedback_button.feedback_path,
-          maxlength: 400,
-          minwords: 5
+          maxlength: Europeana::FeedbackButton::Feedback::MAX_LENGTH,
+          minwords: Europeana::FeedbackButton::Feedback::MIN_WORDS,
+          privacy_policy_url: Europeana::FeedbackButton.privacy_policy_url
         }
       end
     end

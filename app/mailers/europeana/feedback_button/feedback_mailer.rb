@@ -1,18 +1,21 @@
 # frozen_string_literal: true
+
 module Europeana
   module FeedbackButton
     class FeedbackMailer < ApplicationMailer
-      include FeedbackHelper
-
-      def post(text:, type:, page:, ip:)
-        fail Errors::NoRecipient unless feedback_enabled?
+      def post(text:, type:, page:, email: nil)
+        fail NoRecipientError unless Europeana::FeedbackButton.enabled?
 
         @text = text
         @type = type
         @page = page
-        @ip = ip
+        @email = email
 
-        mail(to: Rails.application.config.x.feedback_mail_to, subject: text.truncate(100, separator: ' '))
+        mail_options = {
+          to: Europeana::FeedbackButton.mail_to,
+          subject: text.truncate(100, separator: ' ')
+        }
+        mail(mail_options)
       end
     end
   end

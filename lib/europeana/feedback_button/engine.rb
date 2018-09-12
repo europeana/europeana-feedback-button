@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Europeana
   module FeedbackButton
     class Engine < ::Rails::Engine
@@ -11,8 +12,8 @@ module Europeana
       end
 
       config.autoload_paths += %W(
+        #{config.root}/app/validators
         #{config.root}/app/views/concerns
-        #{config.root}/app/views/layouts
       )
     end
   end
