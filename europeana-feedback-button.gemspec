@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.org/europeana/europeana-feedback-button'
   s.summary     = 'Europeana Feedback Button.'
   s.description = 'An engine which allows the Europeana Feedback Button to be displayed.'
-  s.license = 'EUPL-1.1'
+  s.license = 'EUPL-1.2'
 
   s.files         = `git ls-files -z`.split("\x0")
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
